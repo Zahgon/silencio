@@ -8,7 +8,6 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import org.paukov.combinatorics.CombinatoricsFactory;
 import org.paukov.combinatorics.Generator;
 import org.paukov.combinatorics.ICombinatoricsVector;
@@ -31,26 +30,14 @@ import pl.szczepanik.silencio.decisions.PositiveDecision;
  */
 public final class ProcessorSmokeChecker {
 
-    private static final List<Converter> CONVERTERS = Collections.unmodifiableList(Arrays.asList(
-            new BlankConverter(),
-            new WhiteCharConverter(),
-            new ConstantValueConverter(),
-            new KeyValueConverter(),
-            new PassedValueConverter()));
+    private static final List<Converter> CONVERTERS = Collections.unmodifiableList(Arrays.asList(new BlankConverter(), new WhiteCharConverter(), new ConstantValueConverter(), new KeyValueConverter(), new PassedValueConverter()));
 
-    private static final List<Decision> DECISIONS = Collections.unmodifiableList(Arrays.asList(
-            new PositiveDecision(),
-            new NegativeDecision(),
-            new MatcherDecision(".*")));
+    private static final List<Decision> DECISIONS = Collections.unmodifiableList(Arrays.asList(new PositiveDecision(), new NegativeDecision(), new MatcherDecision(".*")));
 
     /**
      * Immutable list of all available formatters.
      */
-    public static final List<Format> FORMATS = Collections.unmodifiableList(Arrays.asList(
-            Format.JSON,
-            Format.PROPERTIES,
-            Format.XML,
-            Format.YAML));
+    public static final List<Format> FORMATS = Collections.unmodifiableList(Arrays.asList(Format.JSON, Format.PROPERTIES, Format.XML, Format.YAML));
 
     private final Processor processor;
 
@@ -70,25 +57,16 @@ public final class ProcessorSmokeChecker {
      * @param content content that should be converted
      */
     public void validateWithAllCombinations(String content) {
-        ICombinatoricsVector<Converter> allConverters = CombinatoricsFactory.createVector(CONVERTERS);
-        Generator<Converter> subSet = CombinatoricsFactory.createSubSetGenerator(allConverters);
-
-        for (ICombinatoricsVector<Converter> subConverters : subSet) {
-            if (subConverters.getSize() != 0) {
-                Converter[] converters = subConverters.getVector().toArray(new Converter[subConverters.getSize()]);
-                validateWithSetsOfDecisions(converters, content);
-            }
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private void validateWithSetsOfDecisions(Converter[] converters, String content) {
         ICombinatoricsVector<Decision> allDecisions = CombinatoricsFactory.createVector(DECISIONS);
         Generator<Decision> subSet = CombinatoricsFactory.createSubSetGenerator(allDecisions);
-
         for (ICombinatoricsVector<Decision> subDecisions : subSet) {
             if (subDecisions.getSize() != 0) {
                 Decision[] decisions = subDecisions.getVector().toArray(new Decision[subDecisions.getSize()]);
-                Execution[] executions = {new Execution(decisions, converters)};
+                Execution[] executions = { new Execution(decisions, converters) };
                 validateProcessor(executions, content);
             }
         }
@@ -102,15 +80,6 @@ public final class ProcessorSmokeChecker {
      * @throws ProcessorException when processing fails (any reason)
      */
     public void validateProcessor(Execution[] executions, String content) {
-
-        try (Reader input = new StringReader(content);
-             Writer output = new StringWriter()) {
-            processor.setConfiguration(new Configuration(executions));
-            processor.load(input);
-            processor.process();
-            processor.write(output);
-        } catch (IOException e) {
-            // ignore an exception
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

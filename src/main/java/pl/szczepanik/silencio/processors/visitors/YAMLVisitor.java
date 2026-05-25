@@ -1,7 +1,6 @@
 package pl.szczepanik.silencio.processors.visitors;
 
 import java.util.Map;
-
 import pl.szczepanik.silencio.core.Key;
 
 /**
@@ -17,6 +16,6 @@ public class YAMLVisitor extends AbstractJacksonVisitor {
      * @param yaml YAML map to iterate
      */
     public void processYaml(Map<String, Object> yaml) {
-        processMap(yaml);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

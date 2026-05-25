@@ -6,19 +6,18 @@ import pl.szczepanik.silencio.core.Value;
 
 /**
  * Converter that changes each passed value into empty string ("").
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public class BlankConverter implements Converter {
 
     @Override
     public Value convert(Key key, Value value) {
-        return new Value("");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void init() {
-        // This method is intentionally empty, because this class is stateless
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

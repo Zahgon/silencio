@@ -3,7 +3,7 @@ package pl.szczepanik.silencio.core;
 /**
  * Key for the {@link Value}. This type is immutable. This class wraps passed key but it allows also to store metadata
  * or change behavior when requirements changes.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public class Key {
@@ -12,7 +12,7 @@ public class Key {
 
     /**
      * Creates key from passed value.
-     * 
+     *
      * @param key
      *            value of the key
      */
@@ -22,15 +22,15 @@ public class Key {
 
     /**
      * Gets the key.
-     * 
+     *
      * @return the key
      */
     public String getKey() {
-        return key;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return String.format("Key [key='%s']", key);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

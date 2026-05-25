@@ -6,7 +6,7 @@ import pl.szczepanik.silencio.core.Value;
 
 /**
  * Diagnostic converter that returns the same value as the one which was passed.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public final class PassedValueConverter implements Converter {
@@ -17,12 +17,11 @@ public final class PassedValueConverter implements Converter {
 
     @Override
     public Value convert(Key key, Value value) {
-        return value;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void init() {
-        // This method is intentionally empty, because this class is stateless
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

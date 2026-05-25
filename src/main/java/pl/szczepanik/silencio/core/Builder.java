@@ -2,7 +2,6 @@ package pl.szczepanik.silencio.core;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import pl.szczepanik.silencio.api.Converter;
 import pl.szczepanik.silencio.api.Decision;
 import pl.szczepanik.silencio.api.Format;
@@ -26,6 +25,7 @@ public final class Builder {
      * Blank converter that clears value for each key.
      */
     public static final Converter BLANK = new BlankConverter();
+
     /**
      * NumberSequence converter that changes values into sequential numbers.
      */
@@ -52,8 +52,7 @@ public final class Builder {
      * @return instance of current builder
      */
     public Builder with(Decision[] decisions, Converter[] converters) {
-        executions.add(new Execution(decisions, converters));
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -64,7 +63,7 @@ public final class Builder {
      * @return instance of current builder
      */
     public Builder with(Decision decision, Converter... converters) {
-        return with(new Decision[]{decision}, converters);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -75,7 +74,7 @@ public final class Builder {
      * @return instance of current builder
      */
     public Builder with(Decision decision, Converter converter) {
-        return with(decision, new Converter[]{converter});
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -85,7 +84,7 @@ public final class Builder {
      * @return instance of current builder
      */
     public Builder with(Converter... converters) {
-        return with(new PositiveDecision(), converters);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -95,7 +94,7 @@ public final class Builder {
      * @return instance of current builder
      */
     public Builder with(Converter converter) {
-        return with(new PositiveDecision(), converter);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -104,30 +103,13 @@ public final class Builder {
      * @return created processor
      */
     public Processor build() {
-        Processor processor;
-        if (Format.JSON.equals(format)) {
-            processor = new JSONProcessor();
-        } else if (Format.XML.equals(format)) {
-            processor = new XMLProcessor();
-        } else if (Format.PROPERTIES.equals(format)) {
-            processor = new PropertiesProcessor();
-        } else if (Format.YAML.equals(format)) {
-            processor = new YAMLProcessor();
-        } else {
-            throw new IntegrityException("Unsupported format: " + format.getName());
-        }
-
-        Execution[] executionsArray = new Execution[executions.size()];
-        executions.toArray(executionsArray);
-        processor.setConfiguration(new Configuration(executionsArray));
-
-        return processor;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Removes all decisions and converters from this builder.
      */
     public void clearExecutions() {
-        executions.clear();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

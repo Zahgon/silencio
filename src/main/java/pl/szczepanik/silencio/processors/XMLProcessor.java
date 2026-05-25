@@ -3,7 +3,6 @@ package pl.szczepanik.silencio.processors;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
-
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,7 +22,7 @@ import pl.szczepanik.silencio.processors.visitors.XMLVisitor;
 
 /**
  * Provides processor that supports XML format.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public class XMLProcessor extends AbstractProcessor {
@@ -32,47 +31,25 @@ public class XMLProcessor extends AbstractProcessor {
 
     private Document document = null;
 
-    /** Creates new processor for XML file. */
+    /**
+     * Creates new processor for XML file.
+     */
     public XMLProcessor() {
         super(Format.XML);
     }
 
     @Override
     public void realLoad(Reader reader) {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-        factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
-        try {
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            document = builder.parse(new InputSource(reader));
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            throw new ProcessorException(e);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void realProcess() {
-        visitor.setConfiguration(configuration);
-        Element rootElement = document.getDocumentElement();
-        // optional, but recommended
-        // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-        rootElement.normalize();
-
-        visitor.processXML(rootElement);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void realWrite(Writer writer) {
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        try {
-            transformerFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(writer);
-            transformer.transform(source, result);
-        } catch (TransformerException e) {
-            throw new ProcessorException(e);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

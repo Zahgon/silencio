@@ -2,7 +2,6 @@ package pl.szczepanik.silencio.processors;
 
 import java.io.Reader;
 import java.io.Writer;
-
 import pl.szczepanik.silencio.api.Converter;
 import pl.szczepanik.silencio.api.Format;
 import pl.szczepanik.silencio.api.Processor;
@@ -42,23 +41,19 @@ public abstract class AbstractProcessor implements Processor {
 
     @Override
     public Format getFormat() {
-        return format;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Calls {@link Converter#init()} method on each converter.
      */
     protected void initConverties() {
-        for (Execution execution : configuration.getExecutions()) {
-            for (Converter converter : execution.getConverters()) {
-                converter.init();
-            }
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public final void load(Reader reader) {
-        realLoad(reader);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -70,20 +65,12 @@ public abstract class AbstractProcessor implements Processor {
 
     @Override
     public void setConfiguration(Configuration configuration) {
-        validateConfiguration(configuration);
-
-        // deep copy to prevent manipulating on private list
-        this.configuration = configuration;
-
-        stateMachine.moveToLoaded();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public final void process() {
-        stateMachine.validateProcess();
-        initConverties();
-        realProcess();
-        stateMachine.moveToProcessed();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -93,8 +80,7 @@ public abstract class AbstractProcessor implements Processor {
 
     @Override
     public final void write(Writer writer) {
-        stateMachine.validateWrite();
-        realWrite(writer);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -115,5 +101,4 @@ public abstract class AbstractProcessor implements Processor {
             throw new IntegrityException("Configuration must not be null!");
         }
     }
-
 }

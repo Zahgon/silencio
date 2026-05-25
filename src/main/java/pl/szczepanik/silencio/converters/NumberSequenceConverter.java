@@ -2,14 +2,13 @@ package pl.szczepanik.silencio.converters;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import pl.szczepanik.silencio.api.Converter;
 import pl.szczepanik.silencio.core.Key;
 import pl.szczepanik.silencio.core.Value;
 
 /**
  * Converter that changes each passed value into number in way that the same passed value has the same number.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public class NumberSequenceConverter implements Converter {
@@ -29,27 +28,12 @@ public class NumberSequenceConverter implements Converter {
 
     @Override
     public Value convert(Key key, Value value) {
-        // querying by null value is not good idea so for null value return reserved number
-        if (value.getValue() == null) {
-            return new Value(NULL_INDEX);
-        }
-
-        Integer index = values.get(value.getValue());
-        if (index != null) {
-            return new Value(index);
-        } else {
-            index = availableIndex;
-            values.put(value.getValue(), availableIndex);
-            nextIndex();
-            return new Value(index);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void init() {
-        values.clear();
-        availableIndex = NULL_INDEX;
-        nextIndex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private void nextIndex() {

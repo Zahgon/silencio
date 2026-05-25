@@ -11,16 +11,24 @@ import pl.szczepanik.silencio.core.IntegrityException;
  */
 public class Format {
 
-    /** Predefined format for property files. */
+    /**
+     * Predefined format for property files.
+     */
     public static final Format PROPERTIES = new Format("PROPERTIES");
 
-    /** Predefined format for JSON files. */
+    /**
+     * Predefined format for JSON files.
+     */
     public static final Format JSON = new Format("JSON");
 
-    /** Predefined format for XML files. */
+    /**
+     * Predefined format for XML files.
+     */
     public static final Format XML = new Format("XML");
 
-    /** Predefined format for YAML files. */
+    /**
+     * Predefined format for YAML files.
+     */
     public static final Format YAML = new Format("YAML");
 
     private final String name;
@@ -32,7 +40,6 @@ public class Format {
      */
     public Format(String name) {
         validateName(name);
-
         this.name = name;
     }
 
@@ -42,12 +49,12 @@ public class Format {
      * @return name of the format
      */
     public String getName() {
-        return name;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -57,20 +64,7 @@ public class Format {
      */
     @Override
     public final boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (obj == this) {
-            return true;
-        }
-        if (obj.getClass() != getClass()) {
-            return false;
-        }
-
-        Format ref = (Format) obj;
-        return new EqualsBuilder()
-                .append(name, ref.name)
-                .isEquals();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private void validateName(String name) {
@@ -81,6 +75,6 @@ public class Format {
 
     @Override
     public String toString() {
-        return String.format("Format [name='%s']", name);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

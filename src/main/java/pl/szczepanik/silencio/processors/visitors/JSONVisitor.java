@@ -1,7 +1,6 @@
 package pl.szczepanik.silencio.processors.visitors;
 
 import java.util.Map;
-
 import pl.szczepanik.silencio.core.Key;
 
 /**
@@ -17,6 +16,6 @@ public class JSONVisitor extends AbstractJacksonVisitor {
      * @param json JSON map to iterate
      */
     public void processJSON(Map<String, Object> json) {
-        processMap(json);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

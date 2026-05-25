@@ -6,7 +6,7 @@ import pl.szczepanik.silencio.core.Value;
 
 /**
  * Converter that changes each passed value into given string.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public class StringConverter implements Converter {
@@ -15,7 +15,7 @@ public class StringConverter implements Converter {
 
     /**
      * Creates new converter with value that will be returned by this converter.
-     * 
+     *
      * @param newValue
      *            new value used as return value
      */
@@ -25,12 +25,11 @@ public class StringConverter implements Converter {
 
     @Override
     public Value convert(Key key, Value value) {
-        return new Value(newValue);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void init() {
-        // This method is intentionally empty, because this class is stateless
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

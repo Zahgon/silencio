@@ -13,6 +13,7 @@ import pl.szczepanik.silencio.api.Decision;
 public class Execution {
 
     private final Decision[] decisions;
+
     private final Converter[] converters;
 
     /**
@@ -24,7 +25,6 @@ public class Execution {
     public Execution(Decision[] decisions, Converter[] converters) {
         validateDecisions(decisions);
         validateConverters(converters);
-
         this.decisions = decisions;
         this.converters = converters;
     }
@@ -36,7 +36,7 @@ public class Execution {
      * @param converters list of converters use for this execution
      */
     public Execution(Decision decision, Converter[] converters) {
-        this(new Decision[]{decision}, converters);
+        this(new Decision[] { decision }, converters);
     }
 
     /**
@@ -46,7 +46,7 @@ public class Execution {
      * @param converter single converter use for this execution
      */
     public Execution(Decision decision, Converter converter) {
-        this(decision, new Converter[]{converter});
+        this(decision, new Converter[] { converter });
     }
 
     /**
@@ -55,7 +55,7 @@ public class Execution {
      * @return all decisions
      */
     public Decision[] getDecisions() {
-        return decisions;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -64,7 +64,7 @@ public class Execution {
      * @return all converters
      */
     public Converter[] getConverters() {
-        return converters;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private void validateDecisions(Decision[] decisions) {

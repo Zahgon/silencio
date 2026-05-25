@@ -2,16 +2,25 @@ package pl.szczepanik.silencio.core;
 
 /**
  * State machine for processors.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public class ProcessorStateMachine {
 
     private enum States {
-        /** Represent state where processor has been created. */
-        CREATED, /** Represent state where processor has loaded the content. */
-        LOADED, /** Represent state where processor has been processed the content. */
-        PROCESSED;
+
+        /**
+         * Represent state where processor has been created.
+         */
+        CREATED,
+        /**
+         * Represent state where processor has loaded the content.
+         */
+        LOADED,
+        /**
+         * Represent state where processor has been processed the content.
+         */
+        PROCESSED
     }
 
     private static final String ERROR_MESSAGE = "This operation is not allowed for this state: ";
@@ -23,41 +32,35 @@ public class ProcessorStateMachine {
 
     /**
      * Checks if given operation is allowed.
-     * 
+     *
      * @throws ProcessorException
      *             when operation is not allowed for this processor state
      */
     public void validateProcess() {
-        if (state == States.CREATED) {
-            throw new ProcessorException(ERROR_MESSAGE + state.name());
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Checks if given operation is allowed.
-     * 
+     *
      * @throws ProcessorException
      *             when operation is not allowed for this processor state
      */
     public void validateWrite() {
-        if (state != States.PROCESSED) {
-            throw new ProcessorException(ERROR_MESSAGE + state.name());
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 
     /**
      * Changes state into new one.
      */
     public void moveToLoaded() {
-        state = States.LOADED;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Changes state into new one.
      */
     public void moveToProcessed() {
-        state = States.PROCESSED;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

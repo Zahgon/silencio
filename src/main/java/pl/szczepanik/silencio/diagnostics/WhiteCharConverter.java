@@ -6,7 +6,7 @@ import pl.szczepanik.silencio.core.Value;
 
 /**
  * Diagnostic converter that returns blank space <code>' '</code> for every passed value.
- * 
+ *
  * @author Damian Szczepanik (damianszczepanik@github)
  */
 public final class WhiteCharConverter implements Converter {
@@ -19,12 +19,11 @@ public final class WhiteCharConverter implements Converter {
 
     @Override
     public Value convert(Key key, Value value) {
-        return this.value;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void init() {
-        // This method is intentionally empty, because this class is stateless
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }
